@@ -28,6 +28,23 @@ app.get('/api/1/client/jar/:username', (req, res) => {
     }
 })
 
+app.get('/api/1/installer/jar', (req, res) => {
+    res.status(403)
+    res.send("Who Is This For Again?")
+})
+
+app.get('/api/1/client/installer/:username', (req, res) => {
+    const name = req.params.username;
+
+    if (name == null){
+        res.status(403)
+        res.send("Who Is This For Again?")
+    }else{
+        const file = `${__dirname}/api/1/installer.jar`;
+        res.download(file);
+    }
+})
+
 app.listen(port, () => {
     console.log(`Webserver listening on ::${port}`)
 });
