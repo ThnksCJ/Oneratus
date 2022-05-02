@@ -1,11 +1,12 @@
+const lookup = require('./function/lookup.js');
+const cfg = require('./config.js')
+
 const cors = require('cors');
 const express = require('express');
 const app = express();
-const port = 8008;
+const port = cfg.port;
 
 app.use(cors());
-
-const lookup = require('./function/lookup.js');
 
 app.get('/', (req, res) => {
     res.type('text/plain');
@@ -93,5 +94,5 @@ app.get('/api/1/client/installer/:username', (req, res) => {
 })
 
 app.listen(port, () => {
-    console.log(`Webserver listening on ::${port}`)
+    console.log(`Webserver listening on :${port}`)
 });
