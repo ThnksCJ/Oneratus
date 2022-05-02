@@ -5,6 +5,8 @@ const port = 8008;
 
 app.use(cors());
 
+const lookup = require('./function/lookup.js');
+
 app.get('/', (req, res) => {
     res.type('text/plain');
     res.send('Oneratus');
@@ -43,7 +45,11 @@ app.get('/settings/:username', (req, res) => {
         res.send("No hwid AND No user")
     }else{
         res.type('text/plain');
-        res.send("Yay")
+        if (lookup(name, hwid) === "Valid"){
+            res.send("Ur Swag")
+        }else{
+            res.send("Umm no")
+        }
     }
 })
 
