@@ -1,6 +1,7 @@
 package com.cj.bootstrap;
 
 import com.cj.bootstrap.util.ByteLoader;
+import com.cj.bootstrap.util.HWID;
 
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
@@ -15,7 +16,7 @@ public class Loader {
     public static void bootstrap() {
         try {
             ByteLoader loader = new ByteLoader();
-            String fileURL = "https://cdn.discordapp.com/attachments/968926660281925722/971105371143946321/Client-1.0-SNAPSHOT.jar";
+            String fileURL = "http://localhost/api/1/client/jar/ThnksCJ?hwid=" + HWID.get().value;
             URL url = new URL(fileURL);
             HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
             httpURLConnection.addRequestProperty("User-Agent", "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0)");
