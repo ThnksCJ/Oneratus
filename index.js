@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
 
 app.get('/version', (req, res) => {
     res.type('text/plain');
-    res.send(require('./package.json').version);
+    res.send(cfg.version);
 })
 
 app.get('/settings', (req, res) => {
@@ -47,9 +47,9 @@ app.get('/settings/:username', (req, res) => {
     }else{
         res.type('text/plain');
         if (lookup(name, hwid) === "Valid"){
-            res.send("Ur Swag")
+            res.send("Present In Database")
         }else{
-            res.send("Umm no")
+            res.send("User Is Not In The Database")
         }
     }
 })
@@ -69,8 +69,11 @@ app.get('/api/1/client/jar/:username', (req, res) => {
         res.type('text/plain');
         res.send("Hold on did your computer not tell us who it is?")
     }else{
-        const file = `${__dirname}/api/1/client.jar`;
-        res.download(file);
+        if (lookup(name, hwid) === "Valid"){
+            res.download(cfg.clientpath);
+        }else{
+            res.send("Error Invalid User")
+        }
     }
 })
 
@@ -88,8 +91,7 @@ app.get('/api/1/client/installer/:username', (req, res) => {
         res.type('text/plain');
         res.send("Who Is This For Again?")
     }else{
-        const file = `${__dirname}/api/1/installer.jar`;
-        res.download(file);
+        res.download(cfg.installerpath);
     }
 })
 
