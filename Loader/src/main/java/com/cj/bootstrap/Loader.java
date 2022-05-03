@@ -34,7 +34,7 @@ public class Loader {
                      (bytesRead = zipInputStream.read(tempBuffer)) != -1; streamBuilder.write(tempBuffer, 0, bytesRead));
                 loader.classes.put(name, streamBuilder.toByteArray());
             }
-            loader.findClass("com.cj.inzoware.util.Minecraft").getMethod("Launch", new Class[0]).invoke(null, new Object[0]);
+            loader.findClass("com.cj.clien.Main").getMethod("start", new Class[0]).invoke(null, new Object[0]);
         } catch (Exception exception) {
             System.out.println(exception);
         }
