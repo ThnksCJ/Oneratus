@@ -1,3 +1,5 @@
 .idea
 node_modules
 Loader/.gradle
+Client/.gradle
+Loader/run
