@@ -1,4 +1,4 @@
-const AllowedUsers = require('../data/dataHandler.js')
+const AllowedUsers = require('../../data/dataHandler.js')
 
 module.exports = function lookup(name, hwid) {
     const obj1 = {"username": name, "hwid": hwid};

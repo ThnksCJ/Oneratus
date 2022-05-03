@@ -1,4 +1,4 @@
-const lookup = require("../function/lookup");
+const lookup = require("../../function/lookup");
 
 module.exports = function (app) {
     app.get('/settings', (req, res) => {
