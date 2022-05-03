@@ -1,4 +1,4 @@
-const cfg = require("../../../config");
+const cfg = require('../../../config.js')
 
 module.exports = function (app) {
     app.get('/api/1/installer/jar', (req, res) => {

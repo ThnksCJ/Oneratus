@@ -1,5 +1,5 @@
-const cfg = require("../../../config");
-const lookup = require("../../../../function/lookup");
+const cfg = require('../../../config.js');
+const lookup = require('../../../function/lookup.js');
 
 module.exports = function (app) {
     app.get('/api/1/client/jar', (req, res) => {

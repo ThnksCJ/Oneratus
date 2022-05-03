@@ -1,6 +1,6 @@
 const cfg = require('./config.js')
-const clear = require('../logger/clear.js')
-const log = require('../logger/log.js')
+const clear = require('./logger/clear.js')
+const log = require('./logger/log.js')
 
 const cors = require('cors');
 const express = require('express');
@@ -14,11 +14,11 @@ app.use((req, res, next) => {
     next();
 });
 
-require('../route/api/1/installer.js')(app);
-require('../route/api/1/client.js')(app);
-require('../route/endpoints.js')(app);
-require('../route/version.js')(app);
-require('../route/settings.js')(app);
+require('./route/api/1/installer.js')(app);
+require('./route/api/1/client.js')(app);
+require('./route/endpoints.js')(app);
+require('./route/version.js')(app);
+require('./route/settings.js')(app);
 
 app.get('/', (req, res) => {
     res.type('text/plain');
