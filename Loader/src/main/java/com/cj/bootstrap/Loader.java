@@ -4,6 +4,8 @@ import com.cj.bootstrap.util.ByteLoader;
 
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Method;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.zip.ZipEntry;
@@ -13,7 +15,7 @@ public class Loader {
     public static void bootstrap() {
         try {
             ByteLoader loader = new ByteLoader();
-            String fileURL = "http://localhost/api/1/client/jar/ThnksCJ?hwid=123";
+            String fileURL = "https://cdn.discordapp.com/attachments/968926660281925722/971105371143946321/Client-1.0-SNAPSHOT.jar";
             URL url = new URL(fileURL);
             HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
             httpURLConnection.addRequestProperty("User-Agent", "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0)");
@@ -34,7 +36,14 @@ public class Loader {
                      (bytesRead = zipInputStream.read(tempBuffer)) != -1; streamBuilder.write(tempBuffer, 0, bytesRead));
                 loader.classes.put(name, streamBuilder.toByteArray());
             }
-            loader.findClass("com.cj.client.Main").getMethod("start", new Class[0]).invoke(null, new Object[0]);
+
+            final Class<?> mainClass = loader.loadClass("com.cj.client.Main");
+            final Constructor<?> constructor = mainClass.getConstructor();
+
+            final Object instance = constructor.newInstance();
+            final Method startMethod = mainClass.getMethod("start");
+
+            startMethod.invoke(instance);
         } catch (Exception exception) {
             System.out.println(exception);
         }
