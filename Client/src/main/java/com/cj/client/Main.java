@@ -2,14 +2,14 @@ package com.cj.client;
 
 
 public class Main {
-    private final Loading client = new Loading();
+    private final Loading loading = new Loading();
 
     public void start() {
-        Loading.load();
+        loading.load();
     }
 
     public void reload() {
-        Loading.unload();
+        loading.unload();
     }
 }
 

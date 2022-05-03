@@ -18,12 +18,12 @@ public class Client {
     public void init(FMLInitializationEvent event) {
         // if we can find the bootstrap then loading the client is not necessary thru forge
         try {
-            getClass().getClassLoader().loadClass("com.enguard.bootstrap.Bootstrap");
+            getClass().getClassLoader().loadClass("com.cj.bootstrap.Loader");
             return;
         } catch (ClassNotFoundException ignored) {}
         // looks like we are debugging - lets load the client!
-        Loading client = new Loading();
-        Loading.load();
+        Loading loading = new Loading();
+        loading.load();
     }
 
 }
