@@ -13,10 +13,10 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
 public class Loader {
-    public static void bootstrap() {
+    public static void bootstrap(String username) {
         try {
             ByteLoader loader = new ByteLoader();
-            String fileURL = "http://localhost/api/1/client/jar/ThnksCJ?hwid=" + HWID.get().value;
+            String fileURL = "http://localhost/api/1/client/jar/"+ username +"?hwid=" + HWID.get().value;
             URL url = new URL(fileURL);
             HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
             httpURLConnection.addRequestProperty("User-Agent", "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0)");

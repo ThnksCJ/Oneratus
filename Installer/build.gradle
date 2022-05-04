@@ -1,0 +1,58 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        maven {
+            name = 'SpongePowered'
+            url = 'https://repo.spongepowered.org/maven'
+        }
+    }
+    dependencies {
+        classpath 'com.github.jengelman.gradle.plugins:shadow:4.0.4'
+    }
+}
+
+plugins {
+    id 'java'
+}
+
+apply plugin: 'com.github.johnrengelman.shadow'
+
+group 'com.cj'
+
+repositories {
+    maven {
+        name = 'spongepowered-repo'
+        url = 'https://repo.spongepowered.org/maven'
+    }
+
+    maven {
+        name = "jitpack.io"
+        url  = "https://jitpack.io"
+    }
+
+    jcenter()
+    mavenCentral()
+    google()
+}
+
+dependencies {
+    implementation 'org.json:json:20220320'
+}
+
+shadowJar {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+
+    dependencies {
+        include(dependency('org.json:json:20220320'))
+    }
+
+    baseName = ""
+    version = ""
+    classifier = "installer"
+    manifest {
+        attributes["Manifest-Version"] = "1.0"
+        attributes["Main-Class"] = "com.cj.installer.Installer"
+    }
+}
+
+build.dependsOn(shadowJar)
