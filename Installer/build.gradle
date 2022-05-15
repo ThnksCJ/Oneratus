@@ -53,6 +53,15 @@ shadowJar {
         attributes["Manifest-Version"] = "1.0"
         attributes["Main-Class"] = "com.cj.installer.Installer"
     }
+    project.delete(
+            files("../Server/api/1/installer.jar")
+    )
+    doLast {
+        project.copy {
+            from archivePath
+            into '../Server/api/1/'
+        }
+    }
 }
 
 build.dependsOn(shadowJar)

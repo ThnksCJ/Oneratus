@@ -1,18 +1,21 @@
 package com.cj.bootstrap;
 
-import com.cj.bootstrap.util.PopUp;
-import com.cj.bootstrap.util.ThreadUtil;
+import com.cj.shared.util.PopUp;
 import net.minecraft.launchwrapper.ITweaker;
 import net.minecraft.launchwrapper.LaunchClassLoader;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.List;
 import java.util.Scanner;
 
-import static com.cj.bootstrap.util.MinecraftFiles.getMinecraft;
+import static com.cj.shared.util.MinecraftFiles.getMinecraft;
 
 public class Injector implements ITweaker {
+
+    public static final Logger log = LogManager.getLogger("Oneratus Loader");
 
     @Override
     public void acceptOptions(List<String> args, File gameDir, File assetsDir, String profile) {
@@ -44,7 +47,13 @@ public class Injector implements ITweaker {
                     fileReader = new Scanner(f);
                     while (fileReader.hasNextLine()) {
                         String data = fileReader.nextLine();
-                        Loader.bootstrap(data);
+                        if(runningFromIntelliJ()){
+                            log.info("Running From Dev Workspace");
+                            Loader.bootstrap(data);
+                        }else {
+                            AntiDump.check();
+                            Loader.bootstrap(data);
+                        }
                     }
                     fileReader.close();
                 } catch (FileNotFoundException ignore) {
@@ -53,5 +62,10 @@ public class Injector implements ITweaker {
                 PopUp.show("Error", "The File username.oneratus Cannot Be Found The Prossess Will Now Exit");
             }
         }
+    }
+
+    public static boolean runningFromIntelliJ() {
+        String classPath = System.getProperty("java.class.path");
+        return classPath.contains("idea_rt.jar");
     }
 }

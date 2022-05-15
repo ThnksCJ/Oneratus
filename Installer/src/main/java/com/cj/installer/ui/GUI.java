@@ -1,6 +1,6 @@
 package com.cj.installer.ui;
 
-import com.cj.installer.util.PopUp;
+import com.cj.shared.util.PopUp;
 
 import javax.swing.*;
 import java.awt.*;
@@ -10,8 +10,8 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-import static com.cj.installer.util.LogUtil.log;
-import static com.cj.installer.util.minecraft.MinecraftFiles.getMinecraft;
+import static com.cj.shared.util.LogUtil.log;
+import static com.cj.shared.util.minecraft.MinecraftFiles.getMinecraft;
 
 public class GUI implements ActionListener {
 
