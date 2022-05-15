@@ -1,13 +1,13 @@
 package com.cj.installer;
 
 import com.cj.installer.ui.GUI;
+import com.cj.shared.util.installer.version.VersionInstaller;
 import com.cj.shared.util.library.LibraryInstaller;
-import com.cj.shared.util.version.VersionInstaller;
 
 import java.io.File;
 
-import static com.cj.shared.util.LogUtil.log;
-import static com.cj.shared.util.minecraft.MinecraftFiles.getMinecraft;
+import static com.cj.shared.util.installer.LogUtil.log;
+import static com.cj.shared.util.installer.minecraft.MinecraftFiles.getMinecraft;
 
 public class Installer {
 

@@ -1,4 +1,4 @@
-package com.cj.installer.util.minecraft;
+package com.cj.shared.util.installer.minecraft;
 
 import java.io.File;
 

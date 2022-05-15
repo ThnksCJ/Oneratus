@@ -1,4 +1,4 @@
-package com.cj.bootstrap.util;
+package com.cj.shared.util.loader;
 
 import com.google.common.io.BaseEncoding;
 

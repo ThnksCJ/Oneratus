@@ -1,6 +1,6 @@
 package com.cj.shared.util.library;
 
-import com.cj.shared.util.minecraft.MinecraftFiles;
+import com.cj.shared.util.installer.minecraft.MinecraftFiles;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -10,7 +10,7 @@ import java.net.URL;
 import java.nio.channels.Channels;
 import java.nio.channels.ReadableByteChannel;
 
-import static com.cj.shared.util.LogUtil.log;
+import static com.cj.shared.util.installer.LogUtil.log;
 
 public class LibraryInstaller {
 

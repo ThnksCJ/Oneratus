@@ -1,7 +1,7 @@
 package com.cj.bootstrap;
 
-import com.cj.shared.util.ByteLoader;
-import com.cj.shared.util.HWID;
+import com.cj.shared.util.loader.ByteLoader;
+import com.cj.shared.util.loader.HWID;
 
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;

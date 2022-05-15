@@ -1,6 +1,6 @@
 package com.cj.bootstrap;
 
-import com.cj.shared.util.PopUp;
+import com.cj.shared.util.loader.PopUp;
 import net.minecraft.launchwrapper.ITweaker;
 import net.minecraft.launchwrapper.LaunchClassLoader;
 import org.apache.logging.log4j.LogManager;
@@ -11,7 +11,7 @@ import java.io.FileNotFoundException;
 import java.util.List;
 import java.util.Scanner;
 
-import static com.cj.shared.util.MinecraftFiles.getMinecraft;
+import static com.cj.shared.util.loader.MinecraftFiles.getMinecraft;
 
 public class Injector implements ITweaker {
 

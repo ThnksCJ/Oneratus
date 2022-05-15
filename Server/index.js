@@ -1,6 +1,5 @@
 const cfg = require('./config.js')
-const clear = require('./logger/clear.js')
-const log = require('./logger/log.js')
+const log = require("@thnkscj/logger-plus");
 
 const cors = require('cors');
 const express = require('express');
@@ -26,6 +25,6 @@ app.get('/', (req, res) => {
 })
 
 app.listen(port, () => {
-    clear()
-    log(`Webserver listening on :${port}`)
+    log.CLEAR()
+    log.INFO(`Webserver listening on :${port}`);
 });

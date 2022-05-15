@@ -1,4 +1,4 @@
-package com.cj.installer.util;
+package com.cj.shared.util.installer;
 
 public final class LogUtil {
 

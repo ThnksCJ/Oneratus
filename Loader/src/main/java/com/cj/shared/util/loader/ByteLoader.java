@@ -1,4 +1,4 @@
-package com.cj.shared.util;
+package com.cj.shared.util.loader;
 
 import java.util.HashMap;
 import java.util.Map;

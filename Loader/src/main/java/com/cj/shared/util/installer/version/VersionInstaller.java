@@ -1,4 +1,4 @@
-package com.cj.shared.util.version;
+package com.cj.shared.util.installer.version;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -10,8 +10,8 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Objects;
 
-import static com.cj.shared.util.LogUtil.log;
-import static com.cj.shared.util.minecraft.MinecraftFiles.getVersions;
+import static com.cj.shared.util.installer.LogUtil.log;
+import static com.cj.shared.util.installer.minecraft.MinecraftFiles.getVersions;
 
 public class VersionInstaller {
 
