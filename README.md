@@ -24,6 +24,8 @@ A full mc client loader using tweakclass and remote class loading
 ## Credits
 earthhack - parts of the installer
 
+zzurio - [Anti-Dump](https://github.com/zzurio/Anti-Dump)
+
 (https://github.com/ThnksCJ/logger-plus) - My logging package
 
 orsond - he gave me his loader so some of the code is from that (mainly the instance launch thingy in the loader)
