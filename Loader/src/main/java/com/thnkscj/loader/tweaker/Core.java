@@ -19,6 +19,8 @@ public class Core {
     }
 
     public String[] getTransformers() {
-        return new String[]{};
+        return new String[]{
+                CfgAccessTransformer.class.getName()
+        };
     }
 }
