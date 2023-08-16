@@ -7,7 +7,7 @@ A full minecraft client loader for 1.12.2 forge using tweak class and remote cla
 ### Structure
 
 * `Loader` – This module loads the client code from the server
-* `Client` – the client code, This gets loaded from the server using the loader when the game starts.
+* `Client` – The client code, This gets loaded from the server using the loader when the game starts.
 * `Server` – Authenticating hwid, sends client.jar in return if valid
 * `Installer` – installs the library jar and edits the version.json files (adds tweak class)
 
@@ -43,9 +43,9 @@ version and jar name)
 You will also need to change the `Installer.java` file to your values.
 
 ```java
-public static String mainClassPath="com.thnkscj.loader.Tweaker";
-public static String jarPath="com/thnkscj/loader/1.0.0/Loader-1.0.0.jar";
-public static URL jarUrl=toUrl("https://thnkscj.github.io/"+jarPath);
+public static String mainClassPath = "com.thnkscj.loader.Tweaker";
+public static String jarPath = "com/thnkscj/loader/1.0.0/Loader-1.0.0.jar";
+public static URL jarUrl = toUrl("https://thnkscj.github.io/" + jarPath);
 ```
 
 This will request the library jar from `https://thnkscj.github.io/com/thnkscj/loader/1.0.0/Loader-1.0.0.jar` and add the
@@ -102,4 +102,4 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
