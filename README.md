@@ -9,7 +9,7 @@ A full minecraft client loader for 1.12.2 forge using tweak class and remote cla
 * `Loader` – This module loads the client code from the server
 * `Client` – the client code, This gets loaded from the server using the loader when the game starts.
 * `Server` – Authenticating hwid, sends client.jar in return if valid
-* `installer` – installs the library jar and edits the version.json files (adds tweak class)
+* `Installer` – installs the library jar and edits the version.json files (adds tweak class)
 
 ### Development
 
