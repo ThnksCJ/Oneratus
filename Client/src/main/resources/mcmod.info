@@ -1,0 +1,15 @@
+[
+  {
+    "modid": "client",
+    "name": "Client",
+    "description": "A client side modification",
+    "version": "1.0",
+    "mcversion": "[1.12, 1.12.1, 1.12.2]",
+    "authorList": [
+      "ThnksCJ"
+    ],
+    "credits": "Forge Team for FML, Sponge for Mixin",
+    "screenshots": [],
+    "dependencies": []
+  }
+]

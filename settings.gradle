@@ -1,0 +1,6 @@
+rootProject.name = 'Oneratus-NEW'
+include 'Loader'
+include 'Installer'
+include 'Client'
+include 'Server'
+

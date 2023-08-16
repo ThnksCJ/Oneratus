@@ -1,0 +1,9 @@
+{
+  "required": true,
+  "compatibilityLevel": "JAVA_8",
+  "package": "com.thnkscj.client.mixins",
+  "refmap": "mixins.client.refmap.json",
+  "mixins": [
+    "MixinMinecraft"
+  ]
+}
